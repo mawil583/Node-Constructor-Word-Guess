@@ -23,6 +23,7 @@ function askQuestions() {
                 // as an argument into the checker function
                 // from the word.js file
                 wordObj.updateLetterObjArr(responseObj.guess);
+                if (randomWord)
                 askQuestions();
             })
     }

@@ -25,13 +25,10 @@ class Letter {
         } 
     }
 }
-
 // if underlyingLetter is "a" as in:
-// var letter = new Letter("a");
-// guesses();
-// compareGuessToUnderlyingChar()
-// console.log(letter + " " + letter.guesses());
-/* then the resulting object would look like this:
+var letter = new Letter("a");
+console.log(letter);
+/* I would expect the resulting object would look like this:
 Letter = {
     underlyingLetter: "a",
     hasUnderlyingLetterBeenGuessed: false,
