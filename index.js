@@ -22,8 +22,13 @@ function askQuestions() {
                 // this sends the user input (letterGuess)
                 // as an argument into the checker function
                 // from the word.js file
-                wordObj.updateLetterObjArr(responseObj.guess);
-                if (randomWord)
+                let guessIsCorrect = wordObj.updateLetterObjArr(responseObj.guess);
+                if (guessIsCorrect === true) {
+                    console.log("Correct!");
+                } else {
+                    console.log("Wrong! Try again.");
+                }
+                // if (randomWord)
                 askQuestions();
             })
     }

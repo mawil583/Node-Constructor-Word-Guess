@@ -42,10 +42,14 @@ class Word {
         // if (count === this.ArrOfLetterObjects.length) {
         //     console.log("wrong guess");
         // }
-        
+        let guessIsCorrect = false;
         for (var i = 0; i < this.ArrOfLetterObjects.length; i++) {
-            this.ArrOfLetterObjects[i].updateWasLetterGuessedBool(guess);
+            let letterWasGuessed = this.ArrOfLetterObjects[i].updateWasLetterGuessedBool(guess);
+            if (letterWasGuessed === true) {
+                guessIsCorrect = true;
+            }
         }
+        return guessIsCorrect;
     }
 }
 // let newWord = new Word("cat");

@@ -22,12 +22,15 @@ class Letter {
         // console.log(this.underlyingLetter);
         if (guess === this.underlyingLetter) {
             this.hasUnderlyingLetterBeenGuessed = true;
-        } 
-    }
-}
+            return true;
+        } else {
+            return false;
+        };
+    };
+};
 // if underlyingLetter is "a" as in:
-var letter = new Letter("a");
-console.log(letter);
+// var letter = new Letter("a");
+// console.log(letter);
 /* I would expect the resulting object would look like this:
 Letter = {
     underlyingLetter: "a",
