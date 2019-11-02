@@ -1,17 +1,20 @@
 var Word = require("./Word.js");
 var inquirer = require('inquirer');
 var wordsArr = ["peppermint", "backpack", "politics", "coffee", "engagement", "fun", "passion", "food", "travel", "code"];
+
 // Randomly selects a word and uses the Word constructor to store it
 let randomWord = wordsArr[Math.floor(Math.random() * wordsArr.length)];
 let wordObj = new Word(randomWord);
+let guesses = 12;
 //  Starts the game
 askQuestions();
 // Prompts the user for each guess and keeps track of the user's remaining guesses
 function askQuestions() {
     wordObj.displayCurrent();
-    if (wordObj.displayCurrentGameProgress.indexOf("_") === -1) {
+    let wordHasBeenSolved = wordObj.displayCurrentGameProgress.indexOf("_") === -1
+    if (wordHasBeenSolved && guesses >= 0) {
         console.log("You won!")
-    } else {
+    } else if (guesses > 0) {
         inquirer
             .prompt([{
                 type: "input",
@@ -27,9 +30,13 @@ function askQuestions() {
                     console.log("Correct!");
                 } else {
                     console.log("Wrong! Try again.");
-                }
-                // if (randomWord)
+                };
+                guesses--;
+                console.log(`guesses remaining: ${guesses}`);
                 askQuestions();
+
             })
+    } else {
+        console.log(`You ran out of guesses. Game Over!`)
     }
 };
