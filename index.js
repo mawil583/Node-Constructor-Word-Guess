@@ -13,7 +13,7 @@ function askQuestions() {
     wordObj.displayCurrent();
     let wordHasBeenSolved = wordObj.displayCurrentGameProgress.indexOf("_") === -1
     if (wordHasBeenSolved && guesses >= 0) {
-        console.log("You won!")
+        console.log("You won!");
     } else if (guesses > 0) {
         inquirer
             .prompt([{

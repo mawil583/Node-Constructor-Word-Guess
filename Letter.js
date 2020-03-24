@@ -47,25 +47,6 @@ Letter = {
             this.hasUnderlyingLetterBeenGuessed = true;
         }
     }
-}
-
-*/
-
-// console.log(letter);
-
-// function Person(first, last, age, eye) {
-//     this.firstName = first;
-//     this.lastName = last;
-//     this.age = age;
-//     this.eyeColor = eye;
-//   }
-
-//   let Person = function() {
-//     this.firstName = first;
-//     this.lastName = last;
-//     this.age = age;
-//     this.eyeColor = eye;
-//   }
-
+}*/
 
 module.exports = Letter;
